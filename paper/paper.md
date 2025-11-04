@@ -38,7 +38,6 @@ authors:
   - name: Veit Schwämmle
     orcid: 0000-0002-9708-6722
     affiliation: 2
-
 affiliations:
  - name: Leiden University Medical Center, Albinusdreef 2, 2333 ZA, Leiden, The Netherlands
    index: 1
