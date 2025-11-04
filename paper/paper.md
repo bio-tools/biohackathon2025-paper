@@ -66,7 +66,7 @@ Research software metadata can be found across many repositories and registries.
 
 # Introduction or Background
 
-Blah blah blah bio.tools[@Ison2016][@Ison2019].
+Blah blah blah bio.tools[@Ison2016,@Ison2019].
 
 Please separate paragraphs with a double line.
 
