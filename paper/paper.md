@@ -41,10 +41,13 @@ authors:
 affiliations:
  - name: Leiden University Medical Center, Albinusdreef 2, 2333 ZA, Leiden, The Netherlands
    index: 1
+   ror: 05xvt9f17 
  - name: University of Southern Denmark, Campusvej 55, 5230, Odense, Denmark
    index: 2
+   ror: 03yrrjy16 
  - name: Institute of Computer Science, University of Tartu, Narva mnt 18, 51009 Tartu, Estonia
    index: 3
+   ror: 03z77qz90 
  - name: Institution 1, address, city, country
    index: 4
  - name: Institution 1, address, city, country
