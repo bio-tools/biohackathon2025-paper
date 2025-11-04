@@ -49,7 +49,7 @@ affiliations:
    index: 4
  - name: Institution 1, address, city, country
    index: 5
- - name: Institution 1, address, city, country
+ - name: Health-RI, Jaarbeursplein 6, 3521 AL,  Utrecht, The Netherlands
    index: 6
  - name: Institution 1, address, city, country
    index: 7
