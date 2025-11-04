@@ -66,7 +66,7 @@ Research software metadata can be found across many repositories and registries.
 
 # Introduction or Background
 
-Add to this section a couple of paragraphs introducing the work done dring the BioHackathon, CodeFest, VoCamp or Sprint event. Please add references whenever needed, for instance [@Katayama:2010].
+Blah blah blah bio.tools[@PMID:26538599] [@PMID:31405382].
 
 Please separate paragraphs with a double line.
 
