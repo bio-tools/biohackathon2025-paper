@@ -1,26 +1,64 @@
 ---
-title: 'BioHackrXiv  template'
+title: 'Bidirectional bridge: GitHub ⇄ bio.tools'
 tags:
-  - replace with your own keywords
-  - at least 3 is recommended
+  - GitHub
+  - bio.tools
+  - software metadata
 authors:
-  - name: First Last
-    orcid: 0000-0000-0000-0000
+  - name: Mariia Steeghs-Turchina
+    orcid: 0000-0002-0852-4752
     affiliation: 1
-  - name: Second Last
-    orcid: 0000-0000-0000-0000
+  - name: Anna Niehues
+    orcid: 0000-0002-9839-5439
+    affiliation: 1
+  - name: Ana Mendes
+    orcid: 0009-0008-5170-0927
+    affiliation: 2
+  - name: Erik Jaaniso
+    orcid: 0009-0003-4246-6546
+    affiliation: 3
+  - name: Johan Gustafsson
+    orcid: 0000-0002-2977-5032
+    affiliation: 4
+  - name: Walter Baccinelli
+    orcid: 0000-0001-8888-4792
+    affiliation: 5
+  - name: Vedran Kasalica
+    orcid: 0000-0002-0097-1056
+    affiliation: 5
+  - name: Sam Cox
+    orcid: 0000-0002-9841-9816
+    affiliation: 6
+  - name: Ivan Topolsky
+    orcid: 0000-0002-7561-0810
+    affiliation: 7      
+  - name: Magnus Palmblad
+    orcid: 0000-0002-5865-8994
+    affiliation: 1
+  - name: Veit Schwämmle
+    orcid: 0000-0002-9708-6722
     affiliation: 2
 
 affiliations:
- - name: Institution 1, address, city, country
+ - name: Leiden University Medical Center, Albinusdreef 2, 2333 ZA, Leiden, The Netherlands
    index: 1
- - name: Institution 1, address, city, country
+ - name: University of Southern Denmark, Campusvej 55, 5230, Odense, Denmark
    index: 2
-date: 01 January 2020
+ - name: Institution 1, address, city, country
+   index: 3
+ - name: Institution 1, address, city, country
+   index: 4
+ - name: Institution 1, address, city, country
+   index: 5
+ - name: Institution 1, address, city, country
+   index: 6
+ - name: Institution 1, address, city, country
+   index: 7
+date: 04 November 2025
 bibliography: paper.bib
-authors_short: Last et al. (2021) BioHackrXiv  template
+authors_short: Steeghs-Turchina et al. (2025) 'Bidirectional bridge: GitHub ⇄ bio.tools'
 group: BioHackrXiv
-event: BioHackathon Europe 2021
+event: BioHackathon Europe 2025
 ---
 
 # Introduction or Background
