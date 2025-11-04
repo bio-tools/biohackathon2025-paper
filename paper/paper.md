@@ -89,8 +89,6 @@ Table 1
 | item 3 | item 4 |
 
 Remember to introduce figures (see Figure 1) before they appear on the document. 
-
-![BioHackrXiv logo](./biohackrxiv.png)
  
 Figure 1. A figure corresponding to the logo of our BioHackrXiv preprint.
 
