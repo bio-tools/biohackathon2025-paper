@@ -56,7 +56,7 @@ affiliations:
    index: 7
 date: 04 November 2025
 bibliography: paper.bib
-authors_short: Steeghs-Turchina et al. (2025) 'Bidirectional bridge: GitHub ⇄ bio.tools'
+authors_short: Steeghs-Turchina et al. (2025) Bidirectional bridge: GitHub ⇄ bio.tools
 group: BioHackrXiv
 event: BioHackathon Europe 2025
 ---
