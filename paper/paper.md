@@ -31,7 +31,7 @@ authors:
     affiliation: 6
   - name: Ivan Topolsky
     orcid: 0000-0002-7561-0810
-    affiliation: 7      
+    affiliation: 7
   - name: Magnus Palmblad
     orcid: 0000-0002-5865-8994
     affiliation: 1
