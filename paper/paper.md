@@ -64,6 +64,7 @@ event: BioHackathon Europe 2025
 biohackathon_name: "BioHackathon Europe 2023"
 biohackathon_url:   "https://biohackathon-europe.org/"
 biohackathon_location: "Barcelona, Spain, 2023"
+git_url: "https://github.com/bio-tools/biohackathon2025-paper"
 ---
 
 # Abstract
