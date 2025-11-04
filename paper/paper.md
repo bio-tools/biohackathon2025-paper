@@ -43,7 +43,7 @@ affiliations:
    index: 1
  - name: University of Southern Denmark, Campusvej 55, 5230, Odense, Denmark
    index: 2
- - name: Institution 1, address, city, country
+ - name: Institute of Computer Science, University of Tartu, Narva mnt 18, 51009 Tartu, Estonia
    index: 3
  - name: Institution 1, address, city, country
    index: 4
