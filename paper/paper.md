@@ -73,13 +73,31 @@ Research software metadata can be found across many repositories and registries.
 
 # Introduction
 
-bio.tools [@Ison2016;@Ison2019] is a curated registry designed to support the discovery, annotation, and interoperability of bioinformatics software and databases. It provides rich and standardized metadata describing the functions (operations), inputs, outputs, and general information about research software following its own schema and the EDAM ontology [@Ison2013] to ensure semantic consistency and machine readability. By offering persistent identifiers, bio.tools enhances the findability and reusability of computational resources in line with FAIR principles [@Wilkinson2016]. The platform serves as a community-driven hub linking software curators, developers and users with repositories and complementary infrastructures such as Galaxy [@GalaxyCommunity2024], OpenEBench [@Capella-Gutierrez2017] and WorkflowHub [@Gustafsson2025]. Through these functions, bio.tools acts as a central resource for organizing and connecting the bioinformatics software ecosystem, promoting transparency, interoperability, and sustainable reuse in the life sciences.
+bio.tools [@Ison2016;@Ison2019] is a curated registry designed to support the discovery, annotation, and interoperability of bioinformatics software and databases. By offering persistent identifiers, bio.tools enhances the findability and reusability of computational resources in line with FAIR principles [@Wilkinson2013;@Barker2022]. To ensure semantic consistency and machine readability, the registry also allows for the addition of rich and standardized metadata that follows its own schema (i.e. *biotoolsSchema*) and that leverages the EDAM ontology [@Ison2013]. This allows a given registry entry to describe general information (e.g. software name, homepage), contextual metadata (e.g. topic area, publications), and software functions (i.e. operations), inputs, and outputs. 
+The platform serves as a community-driven hub that links software curators, developers and users with repositories and complementary infrastructures such as Galaxy [@GalaxyCommunity2024], OpenEBench [@Capella-Gutierrez2017], and WorkflowHub [@Gustafsson2025]. Through these functions, bio.tools acts as a central resource for organizing and connecting the bioinformatics software ecosystem, promoting transparency, interoperability, and sustainable reuse in the life sciences.
 
- Among other uses, GitHub serves as a socio-technical infrastructure for the collaborative development, dissemination, and maintenance of research software [@Braga2022;@Chen2025]. Built on version control by Git, it provides transparent tracking of code development, enhancing reproducibility and accountability in collaborative scientific enterprises. GitHub provides a number of features useful to such collaborative research software development, such as pull requests (for contributing to projects), issues (for communication around specific features or bugs), and discussion threads (for general communication). By hosting public repositories, GitHub promotes FAIR research software [@Barker2022;@DelPico2024] and open access to source code, documentation, and data. Integration with scholarly platforms such as Zenodo or OSF and continuous integration systems further embeds software into open science practices, while its accessibility and community norms support training and capacity building in reproducible research methods. Collectively, these features position GitHub as a cornerstone platform for open, transparent, and sustainable research software development across disciplines.
 
+Among other uses, GitHub serves as a socio-technical infrastructure for the collaborative development, dissemination, and maintenance of research software [@Braga2022;@Chen2025]. Built on version control by Git, it provides transparent tracking of code development, simultaneously enhancing reproducibility and accountability in collaborative scientific enterprises. GitHub provides a number of features useful to collaborative research software development, such as pull requests (for contributing to projects), issues (for communication around specific features or bugs), and discussion threads (for general communication). By hosting public repositories, GitHub promotes FAIR research software [@Barker2022;@DelPico2024] and open access to source code, documentation, and even data. Integration with scholarly tools, such as Zenodo or OSF, and continuous integration systems further embeds software into open science practices, while its accessibility and community norms support training and capacity building in reproducible research methods. Collectively, these features position GitHub as a cornerstone platform for open, transparent, and sustainable research software development across disciplines.
+
+
+As a registry, bio.tools makes software more FAIR by supporting a faithful representation of the development repository (i.e. GitHub), and providing opportunities to further enrich and build upon the information available for software. Herein, we describe the construction and implementation of a bidirectional bridge framework that allows for synchronisation between GitHub software repositories and their respective bio.tools entries. This project therefore addresses key barriers to maintaining software metadata and supports FAIR practices by embedding curation directly into existing workflows. By automating metadata extraction, suggestion, and integration, the bridge reduces the manual overhead required to FAIRify research software, and lowers the barrier for contributing well-annotated, reusable tools.
 
 
 Please separate paragraphs with a double line.
+
+
+## Elements of the bidirectional bridge
+
+
+## GitHub $\rightarrow$ bio.tools
+
+The bridge uses the GitHub API to extract and distil metadata (i.e. tool name, programming languages, license, publications) from a set of example repositories and produces a bio.tools-compatible metadata file that can enrich bio.tools entries. This approach is beneficial because it semi-automates the update of a registry entry, including the addition of rich metadata, and simultaneously reduces the maintenance burden for RSEs while streamlining the path to FAIR software.
+
+
+## bio.tools $\rightarrow$ GitHub
+
+The bridge also uses bio.tools entry metadata to automatically suggest enhancements to GitHub repositories via issues and pull requests (*where possible*). This approach is beneficial because it allows curated entry information from bio.tools to enrich the original source repository for software, adding missing metadata where needed.
+
 
 ## Subsection level 2
 
@@ -121,11 +139,16 @@ For citations of references, we prefer the use of parenthesis, last name and yea
 
 # Jupyter notebooks, GitHub repositories and data repositories
 
+* GitHub repository: https://github.com/bio-tools/biohackathon2025
+
+
 * Please add a list here
 * Make sure you let us know which of these correspond to Jupyter notebooks. Although not supported yet, we plan to add features for them
 * And remember, software and data need a license for them to be used by others, no license means no clear rules so nobody could legally use a non-licensed research object, whatever that object is
 
 # Acknowledgements
+
 The authors acknowledge the ELIXIR and all organizers and participants of BioHackathon Europe 2025 in Berlin, Germany, for helping make this project a success. We particularly thank those participants who contributed their GitHub repositories or bio.tools entries for testing of the biodirectional GitHub $\rightleftarrows$ bio.tools bridge.
+
 
 # References
