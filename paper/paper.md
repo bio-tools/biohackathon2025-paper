@@ -126,6 +126,6 @@ For citations of references, we prefer the use of parenthesis, last name and yea
 * And remember, software and data need a license for them to be used by others, no license means no clear rules so nobody could legally use a non-licensed research object, whatever that object is
 
 # Acknowledgements
-The authors acknowledge the ELIXIR and all organizers and participants of BioHackathon Europe 2025 in Berlin, Germany, for helping make this project a success.
+The authors acknowledge the ELIXIR and all organizers and participants of BioHackathon Europe 2025 in Berlin, Germany, for helping make this project a success. We particularly thank those participants who contributed their GitHub repositories or bio.tools entries for testing of the biodirectional GitHub $\rightleftarrows$ bio.tools bridge.
 
 # References
