@@ -61,9 +61,9 @@ bibliography: paper.bib
 authors_short: 'Steeghs-Turchina et al. (2025) Bidirectional bridge: GitHub $\rightleftarrows$ bio.tools'
 group: BioHackrXiv
 event: BioHackathon Europe 2025
-biohackathon_name: "BioHackathon Europe 2023"
+biohackathon_name: "BioHackathon Europe 2025"
 biohackathon_url:   "https://biohackathon-europe.org/"
-biohackathon_location: "Barcelona, Spain, 2023"
+biohackathon_location: "Berlin, Germany, 2025"
 git_url: "https://github.com/bio-tools/biohackathon2025-paper"
 ---
 
