@@ -17,7 +17,7 @@ authors:
   - name: Erik Jaaniso
     orcid: 0009-0003-4246-6546
     affiliation: 3
-  - name: Johan Gustafsson
+  - name: Ove Johan Ragnar Gustafsson
     orcid: 0000-0002-2977-5032
     affiliation: 4
   - name: Walter Baccinelli
@@ -48,7 +48,7 @@ affiliations:
  - name: Institute of Computer Science, University of Tartu, Narva mnt 18, 51009 Tartu, Estonia
    index: 3
    ror: 03z77qz90
- - name: Institution 1, address, city, country
+ - name: Australian BioCommons, University of Melbourne, 21 Bedford St, North Melbourne, Victoria, Australia
    index: 4
  - name: Institution 1, address, city, country
    index: 5
