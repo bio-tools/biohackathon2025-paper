@@ -17,7 +17,7 @@ authors:
   - name: Erik Jaaniso
     orcid: 0009-0003-4246-6546
     affiliation: 3
-  - name: Johan Gustafsson
+  - name: Ove Johan Ragnar Gustafsson
     orcid: 0000-0002-2977-5032
     affiliation: 4
   - name: Walter Baccinelli
@@ -48,7 +48,7 @@ affiliations:
  - name: Institute of Computer Science, University of Tartu, Narva mnt 18, 51009 Tartu, Estonia
    index: 3
    ror: 03z77qz90
- - name: Institution 1, address, city, country
+ - name: Australian BioCommons, University of Melbourne, 21 Bedford St, North Melbourne, Victoria, Australia
    index: 4
  - name: Institution 1, address, city, country
    index: 5
@@ -73,9 +73,9 @@ Research software metadata can be found across many repositories and registries.
 
 # Introduction
 
-bio.tools [@Ison2016;@Ison2019] is a curated registry designed to support the discovery, annotation, and interoperability of bioinformatics software and databases. It provides rich and standardized metadata describing the functions (operations), inputs, outputs, and general information about research software following its own schema and the EDAM ontology [@Ison2013] to ensure semantic consistency and machine readability. By offering persistent identifiers, bio.tools enhances the findability and reusability of computational resources in line with FAIR principles [@Wilkinson2013]. The platform serves as a community-driven hub linking software curators, developers and users with repositories and complementary infrastructures such as Galaxy [@GalaxyCommunity2024], OpenEBench [@Capella-Gutierrez2017] and WorkflowHub [@Gustafsson2025]. Through these functions, bio.tools acts as a central resource for organizing and connecting the bioinformatics software ecosystem, promoting transparency, interoperability, and sustainable reuse in the life sciences.
+bio.tools [@Ison2016;@Ison2019] is a curated registry designed to support the discovery, annotation, and interoperability of bioinformatics software and databases. It provides rich and standardized metadata describing the functions (operations), inputs, outputs, and general information about research software following its own schema and the EDAM ontology [@Ison2013] to ensure semantic consistency and machine readability. By offering persistent identifiers, bio.tools enhances the findability and reusability of computational resources in line with FAIR principles [@Wilkinson2016]. The platform serves as a community-driven hub linking software curators, developers and users with repositories and complementary infrastructures such as Galaxy [@GalaxyCommunity2024], OpenEBench [@Capella-Gutierrez2017] and WorkflowHub [@Gustafsson2025]. Through these functions, bio.tools acts as a central resource for organizing and connecting the bioinformatics software ecosystem, promoting transparency, interoperability, and sustainable reuse in the life sciences.
 
- Among other uses, GitHub serves as a socio-technical infrastructure for the collaborative development, dissemination, and maintenance of research software [@Braga2022;@Chen2025]. Built on version control by Git, it provides transparent tracking of code development, enhancing reproducibility and accountability in collaborative scientific enterprises. GitHub provides a number of features useful to such collaborative research software development, such as pull requests (for contributing to projects), issues (for communication around specific features or bugs), and discussion threads (for general communication). By hosting public repositories, GitHub promotes FAIR research software [@Barker2022;@DelPico2024] and open access to source code, documentation, and data. Integration with scholarly tools such as Zenodo or OSF and continuous integration systems further embeds software into open science practices, while its accessibility and community norms support training and capacity building in reproducible research methods. Collectively, these features position GitHub as a cornerstone platform for open, transparent, and sustainable research software development across disciplines.
+ Among other uses, GitHub serves as a socio-technical infrastructure for the collaborative development, dissemination, and maintenance of research software [@Braga2022;@Chen2025]. Built on version control by Git, it provides transparent tracking of code development, enhancing reproducibility and accountability in collaborative scientific enterprises. GitHub provides a number of features useful to such collaborative research software development, such as pull requests (for contributing to projects), issues (for communication around specific features or bugs), and discussion threads (for general communication). By hosting public repositories, GitHub promotes FAIR research software [@Barker2022;@DelPico2024] and open access to source code, documentation, and data. Integration with scholarly platforms such as Zenodo or OSF and continuous integration systems further embeds software into open science practices, while its accessibility and community norms support training and capacity building in reproducible research methods. Collectively, these features position GitHub as a cornerstone platform for open, transparent, and sustainable research software development across disciplines.
 
 
 
@@ -126,8 +126,6 @@ For citations of references, we prefer the use of parenthesis, last name and yea
 * And remember, software and data need a license for them to be used by others, no license means no clear rules so nobody could legally use a non-licensed research object, whatever that object is
 
 # Acknowledgements
-Please always remember to acknowledge the BioHackathon, CodeFest, VoCamp, Sprint or similar where this work was (partially) developed.
+The authors acknowledge the ELIXIR and all organizers and participants of BioHackathon Europe 2025 in Berlin, Germany, for helping make this project a success. We particularly thank those participants who contributed their GitHub repositories or bio.tools entries for testing of the biodirectional GitHub $\rightleftarrows$ bio.tools bridge.
 
 # References
-
-Leave thise section blank, create a paper.bib with all your references.
