@@ -52,6 +52,7 @@ affiliations:
    index: 4
  - name: Health-RI, Jaarbeursplein 6, 3521 AL,  Utrecht, The Netherlands
    index: 5
+   ror: 02xcmp898
  - name: Health Data Research UK, London, UK
    index: 6
  - name: Institution 1, address, city, country
