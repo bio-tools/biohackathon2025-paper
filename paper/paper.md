@@ -129,7 +129,9 @@ Feel free to use numbered lists or bullet points as you need.
 * Item 1
 * Item 2
 
-![Principal component analysis (PCA) of bio.tools entries with a GitHub repo based on the numbers of contributors, forks (and network count), commits, pulls, releases, open issues, subscribers, watchers, stargazers, and the average time to close issues.](PCA.svg)
+Figure 1 below illustrate the relationship between maturity-related metrics in GitHub and the 'maturity' in the corresponding bio.tools entry. All of these GitHub metrics are highly correlated, e.g. a project with more contributors and subscribers are also likely to have more forks, commits and pulls. This is not surprising. While there is some separation between 'Emerging' and 'Mature' tools, the main suggestion from these results is that a fair number of 'Emerging' tools should probably be annotated as 'Mature' by now.
+
+![Principal component analysis (PCA) of bio.tools entries with a GitHub repo based on the numbers of contributors, forks (and network count), commits, pulls, releases, open issues, subscribers, watchers, stargazers, and the average time to close issues. The colors represent the bio.tools 'maturity' level, i.e. 'Emerging', 'Mature' or 'Legacy'.](PCA.svg)
 
 # Discussion and/or Conclusion
 
