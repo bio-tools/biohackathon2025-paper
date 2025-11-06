@@ -129,6 +129,8 @@ Feel free to use numbered lists or bullet points as you need.
 * Item 1
 * Item 2
 
+![Principal component analysis (PCA) of bio.tools entries with a GitHub repo based on the numbers of contributors, forks (and network count), commits, pulls, releases, open issues, subscribers, watchers, stargazers, and the average time to close issues.](PCA.svg)
+
 # Discussion and/or Conclusion
 
 We recommend to include some discussion or conclusion about your work. Feel free to modify the section title as it fits better to your manuscript.
