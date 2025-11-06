@@ -50,9 +50,9 @@ affiliations:
    ror: 03z77qz90
  - name: Australian BioCommons, University of Melbourne, 21 Bedford St, North Melbourne, Victoria, Australia
    index: 4
- - name: Institution 1, address, city, country
-   index: 5
  - name: Health-RI, Jaarbeursplein 6, 3521 AL,  Utrecht, The Netherlands
+   index: 5
+ - name: Health Data Research UK, London, UK
    index: 6
  - name: Institution 1, address, city, country
    index: 7
