@@ -51,14 +51,15 @@ affiliations:
  - name: Australian BioCommons, University of Melbourne, 21 Bedford St, North Melbourne, Victoria, Australia
    index: 4
    ror: 01ej9dk98
- - name: Health-RI, Jaarbeursplein 6, 3521 AL,  Utrecht, The Netherlands
+ - name: Health-RI, Jaarbeursplein 6, 3521 AL, Utrecht, The Netherlands
    index: 5
    ror: 02xcmp898
  - name: Health Data Research UK, London, UK
    index: 6
    ror: 04rtjaj74
- - name: Institution 1, address, city, country
+ - name: Computational Biology Group, SIB Swiss Institute of Bioinformatics, Mattenstrasse 26, 4058 Basel, Switzerland
    index: 7
+   ror: 002n09z45
 date: 04 November 2025
 bibliography: paper.bib
 authors_short: 'Steeghs-Turchina et al. (2025) Bidirectional bridge: GitHub $\rightleftarrows$ bio.tools'
