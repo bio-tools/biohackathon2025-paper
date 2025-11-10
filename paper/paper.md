@@ -121,7 +121,9 @@ Table 1
 | item 1 | item 2 |
 | item 3 | item 4 |
 
-Remember to introduce figures (see Figure 1) before they appear on the document. 
+Remember to introduce figures (see Figure 1) before they appear on the document.
+
+At the end of the BioHackathon week (November 7, 2025), there were XX,XXX resources described in bio.tools. Of these, XX,XXX or XX.X% entries had at least one GitHub URL. Of these, X,XXX (or XX% of all entries with GitHub URLs) pointed to a valid public GitHub repository. From these GitHub repositories, XX,XXX descriptions, XX,XXX GitHub topics, XX,XXX licenses, XX,XXX README.md files, X,XXX CITATION.cff files and XXX,XXX quantiative metrics related to maturity were fetched with the GitHub API.
  
 Figure 1. A figure corresponding to the logo of our BioHackrXiv preprint.
 
