@@ -144,26 +144,21 @@ According to the GitHub “Octoverse 2025” report, there are approximately 395
 
 ![Venn diagram of bio.tools and GitHub, with the intersect representing bio.tools entries with at least one valid GitHub URL.](venn_github_biotools_truncated.svg)
 
+
 # Discussion and/or Conclusion
 
-We recommend to include some discussion or conclusion about your work. Feel free to modify the section title as it fits better to your manuscript.
+While the main goals of this hackathon project was to establish a bidirectional bridge for transporting (or translating?)software metadata from GitHub to bio.tools and vice versa, a number of insights were inevitably gained in the process, for example on the quality and completeness of the metadata in both platforms. A number of challenges were also observed to be harder than expected, such as transferring multiple topics from bio.tools to GitHub.
+
 
 # Future work
 
-The bidirectional bridge connects a commonly used software development platform (GitHub) with the life sciences tool registry bio.tools. The underlying framework of the bridge has been designed following a modular and scalable approach. This will enable connecting other development platform or registries in the future by adding respective metadata schema mappings. Other extension possibilities include language or framework (e.g., bioconda, Bioconductor) specific mappings.
+The bidirectional bridge connects a commonly used software development platform (GitHub) with the life sciences tool registry bio.tools. The underlying framework of the bridge has been designed following a modular and scalable approach. This will enable connecting other development platform or registries in the future by adding respective metadata schema mappings. Other extension possibilities include language or framework (e.g., bioconda, Bioconductor) specific mappings. As both platforms evolve independently, it will also be important to regularly and automatically test that the bridge is still traversible.
 
-And maybe you want to add a sentence or two on how you plan to continue. Please keep reading to learn about citations and references.
-
-For citations of references, we prefer the use of parenthesis, last name and year. If you use a citation manager, Elsevier – Harvard or American Psychological Association (APA) will work. If you are referencing web pages, software or so, please do so in the same way. Whenever possible, add authors and year. We have included a couple of citations along this document for you to get the idea. Please remember to always add DOI whenever available, if not possible, please provide alternative URLs. You will end up with an alphabetical order list by authors’ last name.
-
-# Jupyter notebooks, GitHub repositories and data repositories
+A
+# GitHub repository and data repositories
 
 * GitHub repository: https://github.com/bio-tools/biohackathon2025
 
-
-* Please add a list here
-* Make sure you let us know which of these correspond to Jupyter notebooks. Although not supported yet, we plan to add features for them
-* And remember, software and data need a license for them to be used by others, no license means no clear rules so nobody could legally use a non-licensed research object, whatever that object is
 
 # Acknowledgements
 
