@@ -125,24 +125,19 @@ Remember to introduce figures (see Figure 1) before they appear on the document.
 
 At the end of the BioHackathon week (November 7, 2025), there were 30,608 resources described in bio.tools. Of these, 13,774 or 45.0% entries had at least one GitHub URL. Of these, 13,391 (or 97.2% of all entries with GitHub URLs) pointed to a valid public GitHub repository. From these GitHub repositories, XX,XXX descriptions, XX,XXX GitHub topics, XX,XXX licenses, XX,XXX README.md files, X,XXX CITATION.cff files and XXX,XXX quantiative metrics related to maturity were fetched from GitHub.
 
-
-# Other main section on your manuscript level 1
-
-Feel free to use numbered lists or bullet points as you need.
-* Item 1
-* Item 2
-
-Figure 1 below illustrate the relationship between maturity-related metrics in GitHub and the 'maturity' in the corresponding bio.tools entry. All of these GitHub metrics are highly correlated, e.g. a project with more contributors and subscribers are also likely to have more forks, commits and pulls. This is not surprising. While there is some separation between 'Emerging' and 'Mature' tools, the main suggestion from these results is that a fair number of 'Emerging' tools should probably be annotated as 'Mature' by now. The first principal components has nearly equal loadings for all metrics, where as the second seizes on the average time to close issues and number of contributors. Of all bio.tools entries
-611 are labeled as 'Emerging', 3,532 as 'Mature' and 120 as 'Legacy', with 26,345 having no indicated maturity level. Out of the bio.tools entries with valid GitHub repos, 1,386 tools are labeled as 'Mature', 339 as 'Emerging' and 18 as 'Legacy'.
-
-![Principal component analysis (PCA) of bio.tools entries with a GitHub repo based on the numbers of contributors, forks (and network count), commits, pulls, releases, open issues, subscribers, watchers, stargazers, and the average time to close issues. The colors represent the bio.tools 'maturity' level, i.e. 'Emerging', 'Mature' or 'Legacy'.](PCA.svg)
-
-The PCA figure could be shrunk to one panel in a 4-panel figure with additional statistics and results.
-We could add a Venn diagram of tools bio.tools, GitHub repos and the intersect?
-According to the GitHub “Octoverse 2025” report, there are approximately 395 million public and open-source repositories
+According to the GitHub “Octoverse 2025” report, there were approximately 395 million public and open-source repositories in GitHub in October 2025. The share of GitHub repositories covered by bio.tools is thus vanishingly small (Figure 1). Even on a scientific topic such as "machine learning", there are 166,684 GitHub repos matching the GitHub topic, compared to 3,421 tools in bio.tools with the corresponding EDAM topic.
 
 
 ![Venn diagram of bio.tools and GitHub, with the intersect representing bio.tools entries with at least one valid GitHub URL.](venn_github_biotools_truncated.svg)
+
+
+Some description and figure on the design of the project here...
+
+
+The correlation between software metadata in GitHub and bio.tools maturity level is rather poor. Figure 3 below illustrates the relationship between maturity-related metrics in GitHub and the 'maturity' in the corresponding bio.tools entry. All of these GitHub metrics are highly correlated, e.g. a project with more contributors and subscribers are also likely to have more forks, commits and pulls. This is not surprising. While there is some separation between 'Emerging' and 'Mature' tools, the main suggestion from these results is that a fair number of 'Emerging' tools should probably be annotated as 'Mature' by now. The first principal components has nearly equal loadings for all metrics, where as the second seizes on the average time to close issues and number of contributors. Of all bio.tools entries
+611 are labeled as 'Emerging', 3,532 as 'Mature' and 120 as 'Legacy', with 26,345 having no indicated maturity level. Out of the bio.tools entries with valid GitHub repos, 1,386 tools are labeled as 'Mature', 339 as 'Emerging' and 18 as 'Legacy'.
+
+![Principal component analysis (PCA) of bio.tools entries with a GitHub repo based on the numbers of contributors, forks (and network count), commits, pulls, releases, open issues, subscribers, watchers, stargazers, and the average time to close issues. The colors represent the bio.tools 'maturity' level, i.e. 'Emerging', 'Mature' or 'Legacy'.](PCA.svg)
 
 
 # Discussion and/or Conclusion
