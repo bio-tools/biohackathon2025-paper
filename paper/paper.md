@@ -89,15 +89,13 @@ GitHub provides a number of features useful to collaborative research software d
 
 As a registry, bio.tools makes software more FAIR by supporting a faithful representation of the development repository (i.e., GitHub) and providing opportunities to further enrich and build upon the contextual information available for software. <br> Herein, we describe the construction and implementation of a bidirectional bridge framework that allows for synchronisation between GitHub software repositories and their respective bio.tools entries. This project in part builds on previous work [@Szmigiel2025] and addresses key barriers to maintaining software metadata and supports FAIR practices by embedding curation directly into existing workflows. By automating metadata extraction, suggestion, and integration the bridge reduces the manual overhead required to FAIRify research software, and lowers the barrier for contributing well-annotated, reusable tools.
 
-Please separate paragraphs with a double line.
 
-
-## Elements of the bidirectional bridge
+# Elements of the bidirectional bridge
 
 
 ## GitHub $\rightarrow$ bio.tools
 
-The bridge uses the GitHub API to extract and distil metadata (i.e. tool name, programming languages, license, publications) from a set of example repositories and produces a bio.tools-compatible metadata file that can enrich bio.tools entries. This approach is beneficial because it semi-automates the update of a registry entry, including the addition of rich metadata, and simultaneously reduces the maintenance burden for RSEs while streamlining the path to FAIR software.
+The bridge uses the GitHub API to extract and distil metadata (i.e. tool name, programming languages, license, publications) from a set of example repositories and produces a bio.tools-compatible metadata file that can enrich bio.tools entries (see **Figure 1**). This approach is beneficial because it semi-automates the update of a registry entry, including the addition of rich metadata, and simultaneously reduces the maintenance burden for RSEs while streamlining the path to FAIR software.
 
 
 ## bio.tools $\rightarrow$ GitHub
@@ -105,11 +103,8 @@ The bridge uses the GitHub API to extract and distil metadata (i.e. tool name, p
 The bridge also uses bio.tools entry metadata to automatically suggest enhancements to GitHub repositories via issues and pull requests (*where possible*). This approach is beneficial because it allows curated entry information from bio.tools to enrich the original source repository for software, adding missing metadata where needed.
 
 
-## Subsection level 2
+![High level design of the project](bidirectional_bridge_diagram.png)
 
-Please keep sections to a maximum of three levels, even better if only two levels.
-
-### Subsection level 3
 
 Please keep sections to a maximum of three levels.
 
