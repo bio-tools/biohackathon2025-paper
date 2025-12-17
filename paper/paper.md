@@ -103,7 +103,7 @@ The bridge uses the GitHub API to extract and distil metadata (i.e. tool name, p
 The bridge also uses bio.tools entry metadata to automatically suggest enhancements to GitHub repositories via issues and pull requests (*where possible*). This approach is beneficial because it allows curated entry information from bio.tools to enrich the original source repository for software, adding missing metadata where needed.
 
 
-![High level design of the project](bidirectional_bridge_diagram.png)
+![High level design of the project](assets/bidirectional_bridge_diagram.png)
 
 
 # Results
@@ -117,7 +117,7 @@ At the end of the BioHackathon week (November 7, 2025), there were 30,608 resour
 According to the GitHub “Octoverse 2025” report, there were approximately 395 million public and open-source repositories in GitHub in October 2025. The share of GitHub repositories covered by bio.tools is thus vanishingly small (see **Figure 2**). Even for a scientific topic such as "machine learning", there are 166,684 GitHub repos matching the GitHub topic, compared to 3,421 tools in bio.tools with the corresponding EDAM topic.
 
 
-![Venn diagram of bio.tools and GitHub, with the intersect representing bio.tools entries with at least one valid GitHub URL.](venn_github_biotools_truncated.svg)
+![Venn diagram of bio.tools and GitHub, with the intersect representing bio.tools entries with at least one valid GitHub URL.](assets/venn_github_biotools_truncated.svg)
 
 
 ## Metadata maturity
@@ -126,7 +126,7 @@ The correlation between software metadata in GitHub and bio.tools maturity level
 While there is some separation between 'Emerging' and 'Mature' tools, the main suggestion from these results is that a fair number of 'Emerging' tools should probably be updated to 'Mature'. The first principal component has nearly equal loadings for all metrics, where as the second seizes on the average time to close issues and number of contributors. <br>
 Of all bio.tools entries 611 are labeled as 'Emerging', 3,532 as 'Mature' and 120 as 'Legacy', with 26,345 having no indicated maturity level. Out of the bio.tools entries with valid GitHub repos, 1,386 tools are labeled as 'Mature', 339 as 'Emerging' and 18 as 'Legacy'.
 
-![Principal component analysis (PCA) of bio.tools entries with a GitHub repo based on the numbers of contributors, forks (and network count), commits, pulls, releases, open issues, subscribers, watchers, stargazers, and the average time to close issues. The colors represent the bio.tools 'maturity' level, i.e. 'Emerging', 'Mature' or 'Legacy'.](PCA.svg)
+![Principal component analysis (PCA) of bio.tools entries with a GitHub repo based on the numbers of contributors, forks (and network count), commits, pulls, releases, open issues, subscribers, watchers, stargazers, and the average time to close issues. The colors represent the bio.tools 'maturity' level, i.e. 'Emerging', 'Mature' or 'Legacy'.](assets/PCA.svg)
 
 
 ## Implementation of bridge framework
