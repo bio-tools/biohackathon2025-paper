@@ -131,6 +131,35 @@ Of all bio.tools entries 611 are labeled as 'Emerging', 3,532 as 'Mature' and 12
 
 ## Implementation of bridge framework
 
+The bridge framework is implemented in Python that can operate as either
+
+* a command-line tool,
+* an API, or
+* a Python package.
+
+In each mode, the exposed core logic is the same. All three entry points call the same internal orchestration layer, so the difference is in packaging only, not implementation.
+
+### High-level overview
+
+Conceptually, the bridge performs similar steps in both directions:
+
+1. Fetch information from external sources (Github files, GitHub metadata, and/or bio.tools metadata) using corresponding services' APId.
+2. Build internal representation of the fetched information, resulting in GitHub model and a bio.tools model (if available).
+3. Map between the two representations using a direction-specific mapping pipeline.
+4. Produce actionable output:
+    1. **GitHub → bio.tools**: produce a bio.tools-compatible metadata JSON that can be used to create/update entries.
+    2. **bio.tools → GitHub**: produce repository improvements as (a) file changes in a pull request and (optionally) (b) issues for items that cannot be updated through a pull request.
+
+**Figure 4** demonstrates a summarized sequence diagram of the bidirection bridge flow from a user perspective. It emphasizes three deliberate design choices:
+
+* a single shared core used by all entry points,
+* explicit separation between metadata composition and mapping pipelines, and
+* direction-specific outputs.
+
+![Summarized sequence diagram of the bidirection bridge flow from a user perspective](assets/sequence_diagram.svg)
+
+
+
 
 
 # Discussion and/or Conclusion
