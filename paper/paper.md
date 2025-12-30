@@ -158,8 +158,20 @@ Conceptually, the bridge performs similar steps in both directions:
 
 ![Summarized sequence diagram of the bidirection bridge flow from a user perspective](assets/sequence_diagram.svg)
 
+### Software architecture
 
+The bridge follows a hexagonal (ports-and-adapters) architecture to keep the mapping logic independent of how it is invoked (CLI/API/package) and how it communicates with external systems (GitHub/bio.tools/Europe PMC/SPDX/LLM). The separation enables the implementation to be testable, extensible, and independent of any specific platform or interface.
 
+Separation of concerns in the bridge:
+* **User interaction** (*adapters*): The sole purpose of the adapters and entry points is to facilitate the access to the bridge. They parse CLI arguments, HTTP requests, or Python function calls; translate user intent into a structured "goal" and parameters. The adapters never implement metadata logic, mapping rules, or repository changes.
+* **Canonical internal models** (*core*): The core models define the bridge’s internal structures. They represent GitHub repositories, bio.tools tool records, licenses, and publications in a normalized form. All mapping and decision logic operates on these models rather than raw API responses. They deliberately exclude any knowledge of where the data came from or how it will be written back.
+* **External services** (*services*): Services provide access to external systems and APIs. They fetch metadata from GitHub, bio.tools, Europe PMC, and SPDX, returning raw or lightly structured data for composition into core models. Services also execute repository-level actions (e.g., clone, push, pull request, issue creation). They execute a plan produced by the pipelines but never modify that plan. They also include optional services that provide assistive capabilities, such as LLMs.
+* **Model composition** (*builders*): Builders implement an ingest–transform–compose pattern for relevant services that converts (raw) external data into validated core models. They provide a boundary between services and mapping logic.
+* **Use-case composition** (*bootstrap*): The bootstrap layer declares which repository types, metadata schemas, and goals are supported, and wires together the corresponding handlers, builders, and pipelines. It defines what combinations are allowed, not how they are executed.
+* **Use-case orchestration** (*handlers*): Handlers implement the high-level workflows for each goal (GitHub→bio.tools and bio.tools→GitHub). They call builders to construct core models, call the appropriate mapping pipeline, and delegate execution of results to services. Handlers coordinate the process but contain no field-level mapping rules.
+* **Mapping logic** (*pipelines*): Pipelines encode direction-specific reconciliation logic for given repository and metadata types. They decide what should change by invoking small, field-specific mapping functions. The output is either a registry-ready tool record or a concrete update plan (PR edits + issues).
+* **Field-level mapping** (*pipelines/**/map_funcs*): Field-level mapping functions implement transformations for individual concepts (e.g., name, description, license, topics). They handle normalization, cleaning, templating, and comparison, but do not fetch data or apply changes themselves.
+* **Cross-cutting infrastructure** (*logging, config*): These layers support everything else without owning domain decisions. They support centralized configuration, authentication tokens, and logging.
 
 
 # Discussion and/or Conclusion
