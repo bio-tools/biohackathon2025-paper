@@ -169,9 +169,27 @@ Separation of concerns in the bridge:
 * **Model composition** (*builders*): Builders implement an ingest–transform–compose pattern for relevant services that converts (raw) external data into validated core models. They provide a boundary between services and mapping logic.
 * **Use-case composition** (*bootstrap*): The bootstrap layer declares which repository types, metadata schemas, and goals are supported, and wires together the corresponding handlers, builders, and pipelines. It defines what combinations are allowed, not how they are executed.
 * **Use-case orchestration** (*handlers*): Handlers implement the high-level workflows for each goal (GitHub→bio.tools and bio.tools→GitHub). They call builders to construct core models, call the appropriate mapping pipeline, and delegate execution of results to services. Handlers coordinate the process but contain no field-level mapping rules.
-* **Mapping logic** (*pipelines*): Pipelines encode direction-specific reconciliation logic for given repository and metadata types. They decide what should change by invoking small, field-specific mapping functions. The output is either a registry-ready tool record or a concrete update plan (PR edits + issues).
+* **Mapping logic** (*pipelines*): Pipelines encode direction-specific reconciliation logic for given repository and metadata types. They decide what should change by invoking small, field-specific mapping functions. The output is either a registry-ready tool record or a concrete update plan (PR edits + issues). See more in [Mapping logic](#mapping-logic).
 * **Field-level mapping** (*pipelines/**/map_funcs*): Field-level mapping functions implement transformations for individual concepts (e.g., name, description, license, topics). They handle normalization, cleaning, templating, and comparison, but do not fetch data or apply changes themselves.
 * **Cross-cutting infrastructure** (*logging, config*): These layers support everything else without owning domain decisions. They support centralized configuration, authentication tokens, and logging.
+
+
+## Mapping logic
+
+The core of the bidirectional bridge lies in field-level reconciliation between metadata representations. Because GitHub repositories and bio.tools entries differ substantially in structure, semantics, and completeness guarantees, metadata cannot be transferred through simple one-to-one field mapping. Instead, reconciliation is implemented through explicit decision logic for each metadata concept.
+
+This logic is realized as direction-specific mapping functions, each responsible for a single conceptual field (e.g., name, description, version, homepage, publications) and governed by an explicit reconciliation policy. In this context, the platform from which metadata is read is referred to as the *source* (GitHub or bio.tools), and the platform being updated is referred to as the *target*. Across both directions, the mapping logic follows a small set of consistent principles:
+
+* **Source-prioritized updates**. For a given field, when a value is present in the *source*, it is treated as authoritative. The mapping function produces a target-compatible representation of this value, which replaces the corresponding field in the *target*.
+* **Preservation of missing values**. Absence of a value in the *source* never triggers removal or modification of the corresponding field in the *target*. If the *target* already contains a value, it is preserved unchanged; if the field is missing, it remains absent after mapping.
+* **Explicit conflict handling**. When *source* and *target* contain different values, the *source* value takes precedence, as menrioned above. Such cases are explicitly detected and logged, ensuring that potentially meaningful discrepancies are visible to the user rather than silently resolved.
+* **Policy-driven behavior**. All reconciliation decisions are governed by explicit, field-level rules encoded in the mapping functions. No heuristic or implicit behavior is applied outside these rules, making the mapping logic predictable.
+
+**Figures 5-6** illustrate a selection of mapping functions as flowcharts. The figures highlight how source prioritization and explicit conflict handling are applied, without requiring inspection of the implementation code. More process-related diagrams and flowcharts can be accessed in the [documentation](https://bio-tools.github.io/biohackathon2025/api_reference/diagrams_dev.html).
+
+![GitHub → bio.tools description mapping function flowchart.](assets/flowchart_gh2bt_description.svg)
+
+![bio.tools → GitHub version mapping function flowchart.](assets/flowchart_gh2bt_version.svg)
 
 
 # Discussion and/or Conclusion
