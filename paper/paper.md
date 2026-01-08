@@ -103,7 +103,7 @@ The bridge uses the GitHub API to extract and distil metadata (i.e. tool name, p
 The bridge also uses bio.tools entry metadata to automatically suggest enhancements to GitHub repositories via issues and pull requests (*where possible*). This approach is beneficial because it allows curated entry information from bio.tools to enrich the original source repository for software, adding missing metadata where needed.
 
 
-![High level design of the project](bidirectional_bridge_diagram.png)
+![High level design of the project](assets/bidirectional_bridge_diagram.png)
 
 
 # Results
@@ -117,7 +117,7 @@ At the end of the BioHackathon week (November 7, 2025), there were 30,608 resour
 According to the GitHub “Octoverse 2025” report, there were approximately 395 million public and open-source repositories in GitHub in October 2025. The share of GitHub repositories covered by bio.tools is thus vanishingly small (see **Figure 2**). Even for a scientific topic such as "machine learning", there are 166,684 GitHub repos matching the GitHub topic, compared to 3,421 tools in bio.tools with the corresponding EDAM topic.
 
 
-![Venn diagram of bio.tools and GitHub, with the intersect representing bio.tools entries with at least one valid GitHub URL.](venn_github_biotools_truncated.svg)
+![Venn diagram of bio.tools and GitHub, with the intersect representing bio.tools entries with at least one valid GitHub URL.](assets/venn_github_biotools_truncated.svg)
 
 
 ## Metadata maturity
@@ -126,11 +126,70 @@ The correlation between software metadata in GitHub and bio.tools maturity level
 While there is some separation between 'Emerging' and 'Mature' tools, the main suggestion from these results is that a fair number of 'Emerging' tools should probably be updated to 'Mature'. The first principal component has nearly equal loadings for all metrics, where as the second seizes on the average time to close issues and number of contributors. <br>
 Of all bio.tools entries 611 are labeled as 'Emerging', 3,532 as 'Mature' and 120 as 'Legacy', with 26,345 having no indicated maturity level. Out of the bio.tools entries with valid GitHub repos, 1,386 tools are labeled as 'Mature', 339 as 'Emerging' and 18 as 'Legacy'.
 
-![Principal component analysis (PCA) of bio.tools entries with a GitHub repo based on the numbers of contributors, forks (and network count), commits, pulls, releases, open issues, subscribers, watchers, stargazers, and the average time to close issues. The colors represent the bio.tools 'maturity' level, i.e. 'Emerging', 'Mature' or 'Legacy'.](PCA.svg)
+![Principal component analysis (PCA) of bio.tools entries with a GitHub repo based on the numbers of contributors, forks (and network count), commits, pulls, releases, open issues, subscribers, watchers, stargazers, and the average time to close issues. The colors represent the bio.tools 'maturity' level, i.e. 'Emerging', 'Mature' or 'Legacy'.](assets/PCA.svg)
 
 
 ## Implementation of bridge framework
 
+The bridge framework is implemented in Python that can operate as either
+
+* a command-line tool,
+* an API, or
+* a Python package.
+
+In each mode, the exposed core logic is the same. All three entry points call the same internal orchestration layer, so the difference is in packaging only, not implementation.
+
+### High-level overview
+
+Conceptually, the bridge performs similar steps in both directions:
+
+1. Fetch information from external sources (Github files, GitHub metadata, and/or bio.tools metadata) using corresponding services' APId.
+2. Build internal representation of the fetched information, resulting in GitHub model and a bio.tools model (if available).
+3. Map between the two representations using a direction-specific mapping pipeline.
+4. Produce actionable output:
+    1. **GitHub → bio.tools**: produce a bio.tools-compatible metadata JSON that can be used to create/update entries.
+    2. **bio.tools → GitHub**: produce repository improvements as (a) file changes in a pull request and (optionally) (b) issues for items that cannot be updated through a pull request.
+
+**Figure 4** demonstrates a summarized sequence diagram of the bidirection bridge flow from a user perspective. It emphasizes three deliberate design choices:
+
+* a single shared core used by all entry points,
+* explicit separation between metadata composition and mapping pipelines, and
+* direction-specific outputs.
+
+![Summarized sequence diagram of the bidirection bridge flow from a user perspective](assets/sequence_diagram.svg)
+
+### Software architecture
+
+The bridge follows a hexagonal (ports-and-adapters) architecture to keep the mapping logic independent of how it is invoked (CLI/API/package) and how it communicates with external systems (GitHub/bio.tools/Europe PMC/SPDX/LLM). The separation enables the implementation to be testable, extensible, and independent of any specific platform or interface.
+
+Separation of concerns in the bridge:
+* **User interaction** (*adapters*): The sole purpose of the adapters and entry points is to facilitate the access to the bridge. They parse CLI arguments, HTTP requests, or Python function calls; translate user intent into a structured "goal" and parameters. The adapters never implement metadata logic, mapping rules, or repository changes.
+* **Canonical internal models** (*core*): The core models define the bridge’s internal structures. They represent GitHub repositories, bio.tools tool records, licenses, and publications in a normalized form. All mapping and decision logic operates on these models rather than raw API responses. They deliberately exclude any knowledge of where the data came from or how it will be written back.
+* **External services** (*services*): Services provide access to external systems and APIs. They fetch metadata from GitHub, bio.tools, Europe PMC, and SPDX, returning raw or lightly structured data for composition into core models. Services also execute repository-level actions (e.g., clone, push, pull request, issue creation). They execute a plan produced by the pipelines but never modify that plan. They also include optional services that provide assistive capabilities, such as LLMs.
+* **Model composition** (*builders*): Builders implement an ingest–transform–compose pattern for relevant services that converts (raw) external data into validated core models. They provide a boundary between services and mapping logic.
+* **Use-case composition** (*bootstrap*): The bootstrap layer declares which repository types, metadata schemas, and goals are supported, and wires together the corresponding handlers, builders, and pipelines. It defines what combinations are allowed, not how they are executed.
+* **Use-case orchestration** (*handlers*): Handlers implement the high-level workflows for each goal (GitHub→bio.tools and bio.tools→GitHub). They call builders to construct core models, call the appropriate mapping pipeline, and delegate execution of results to services. Handlers coordinate the process but contain no field-level mapping rules.
+* **Mapping logic** (*pipelines*): Pipelines encode direction-specific reconciliation logic for given repository and metadata types. They decide what should change by invoking small, field-specific mapping functions. The output is either a registry-ready tool record or a concrete update plan (PR edits + issues). See more in [Mapping logic](#mapping-logic).
+* **Field-level mapping** (*pipelines/**/map_funcs*): Field-level mapping functions implement transformations for individual concepts (e.g., name, description, license, topics). They handle normalization, cleaning, templating, and comparison, but do not fetch data or apply changes themselves.
+* **Cross-cutting infrastructure** (*logging, config*): These layers support everything else without owning domain decisions. They support centralized configuration, authentication tokens, and logging.
+
+
+## Mapping logic
+
+The core of the bidirectional bridge lies in field-level reconciliation between metadata representations. Because GitHub repositories and bio.tools entries differ substantially in structure, semantics, and completeness guarantees, metadata cannot be transferred through simple one-to-one field mapping. Instead, reconciliation is implemented through explicit decision logic for each metadata concept.
+
+This logic is realized as direction-specific mapping functions, each responsible for a single conceptual field (e.g., name, description, version, homepage, publications) and governed by an explicit reconciliation policy. In this context, the platform from which metadata is read is referred to as the *source* (GitHub or bio.tools), and the platform being updated is referred to as the *target*. Across both directions, the mapping logic follows a small set of consistent principles:
+
+* **Source-prioritized updates**. For a given field, when a value is present in the *source*, it is treated as authoritative. The mapping function produces a target-compatible representation of this value, which replaces the corresponding field in the *target*.
+* **Preservation of missing values**. Absence of a value in the *source* never triggers removal or modification of the corresponding field in the *target*. If the *target* already contains a value, it is preserved unchanged; if the field is missing, it remains absent after mapping.
+* **Explicit conflict handling**. When *source* and *target* contain different values, the *source* value takes precedence, as menrioned above. Such cases are explicitly detected and logged, ensuring that potentially meaningful discrepancies are visible to the user rather than silently resolved.
+* **Policy-driven behavior**. All reconciliation decisions are governed by explicit, field-level rules encoded in the mapping functions. No heuristic or implicit behavior is applied outside these rules, making the mapping logic predictable.
+
+**Figures 5-6** illustrate a selection of mapping functions as flowcharts. The figures highlight how source prioritization and explicit conflict handling are applied, without requiring inspection of the implementation code. More process-related diagrams and flowcharts can be accessed in the [documentation](https://bio-tools.github.io/biohackathon2025/api_reference/diagrams_dev.html).
+
+![GitHub → bio.tools description mapping function flowchart.](assets/flowchart_gh2bt_description.svg)
+
+![bio.tools → GitHub version mapping function flowchart.](assets/flowchart_gh2bt_version.svg)
 
 
 # Discussion and/or Conclusion
