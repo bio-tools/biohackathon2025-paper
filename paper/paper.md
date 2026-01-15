@@ -194,14 +194,31 @@ In practice, this logic is realized as direction-specific mapping functions. Eac
 ![bio.tools → GitHub version mapping function flowchart.](assets/flowchart_gh2bt_version.svg)
 
 
-# Discussion and/or Conclusion
+# Discussion 
 
-While the main goals of this hackathon project was to establish a bidirectional bridge for transporting (or translating?)software metadata from GitHub to bio.tools and vice versa, a number of insights were inevitably gained in the process, for example on the quality and completeness of the metadata in both platforms. A number of challenges were also observed to be harder than expected, such as transferring multiple topics from bio.tools to GitHub.
+The goal of this BioHackathon project was to make software metadata annotation and maintenance less painful by creating a mechanism that can extract high-quality metadata from GitHub repositories to build bio.tools entries, and use bio.tools records to propose improvements back to GitHub (i.e. badges, descriptions, files). The outcome was a bidirectional bridge for maintaining software metadata, the structure of which has been designed to be a sustainable (i.e. extensible and robust) contribution to the global FAIR software ecosystem: capable of supporting bio.tools to faithfully represent GitHub repositories for software, while affording the possibility for developers and registry curators to leverage bio.tools and its underlying standards to improve the metadata richness of software repositories.  
+
+A number of insights were inevitably also gained in the process of building and testing the bridge.
+
+**Statistics:** the repository and registry statistics collected showed that there is a vast gulf between the number of open source repositories on GitHub and the number of bio.tools entries. The example of machine learning is illustrative of this challenge. Those repositories which fall within this domain, and that also contain software, could benefit from the bidirectional bridge facilitating the creation of new bio.tools entries. In such an example, the new entries could be reviewed, the bio.tools metadata wizard could support enrichment of the entry, and the enriched metadata could be passed back to the GitHub repository. There is also a clear need to expand the reach of the bio.tools registry, registering new software based on the respective repositories to make more of the global ecosystem FAIR.
+
+**Completeness of metadata:** the results of comparisons between GitHub and bio.tools metadata underscore the importance of bridging and where possible synchronising metadata. The core reasons for this are to faithfully represent a repository in the registry that is intending to facilitate FAIRness, and to ensure that there are software creators are aware of bio.tools, and can leverage the registry to address metadata completeness. This aspect also requires engagement with the broader community, not only to make them more aware of bio.tools and the bridge, but to actively incorporate their requirements and use cases into their iterative development. 
+
+**Mapping challenges:** it was found to be harder than expected to transfer multiple topics from bio.tools to GitHub.
 
 
-# Future work
 
-The bidirectional bridge connects a commonly used software development platform (GitHub) with the life sciences tool registry bio.tools. The underlying framework of the bridge has been designed following a modular and scalable approach. This will enable connecting other development platform or registries in the future by adding respective metadata schema mappings. Other extension possibilities include language or framework (e.g., bioconda, Bioconductor) specific mappings. As both platforms evolve independently, it will also be important to regularly and automatically test that the bridge is still traversible.
+# Conclusion & future work
+
+The bidirectional bridge connects a commonly used software development platform (GitHub) with the life sciences tool registry bio.tools. The bridge reduces the amount of manual work required for software metadata curation, uses bio.tools to improve the visibility and discoverability of repositories, and closes the loop by establishing the first synchronisations of metadata between GitHub and bio.tools. Metadata is useful in both directions.
+
+The project has delivered a successful bridge mechanism concept: there is now a suite of additional downstream work that may be undertaken to realise the full potential of the bridge.
+
+Firstly, the underlying framework of the bridge has been designed following a modular and scalable approach. This will enable further work to connect additional development platforms, or registries, by adding suitable metadata schema mappings. Other extension possibilities may include language or framework specific mappings (e.g. bioconda, Bioconductor). As both GitHub and bio.tools evolve independently, it will also be important to regularly and automatically test that the bridge is still traversible.
+
+Secondly, there are multiple enhancements being discussed to support the bridge, including a Pub2Tools integration for metadata mining, integration of the bridge into the bio.tools user interface, as well as suitable processes for mapping EDAM topics from GitHub to bio.tools, and mapping bio.tools functions to a GitHub README.
+
+Finally, to ensure that the continued evolution of the bridge meets the expectations of the research software community, additional repositories will need to be recruited for testing, and processes will be established to collect and prioritise the requirements of bridge end users.
 
 
 # GitHub repository and data repositories
