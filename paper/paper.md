@@ -106,7 +106,7 @@ The bridge uses the GitHub API to extract and distil metadata (i.e., tool name, 
 The bridge also uses bio.tools entry metadata to automatically suggest enhancements to GitHub repositories via issues, where possible. This approach is beneficial because it allows curated entry information from bio.tools to enrich the original source repository for software, adding missing metadata where needed.
 
 
-![High level design of the project](assets/bidirectional_bridge_diagram.png)
+![High level design of the bidirectional bridge.](assets/bidirectional_bridge_diagram.png)
 
 
 # Results
@@ -120,7 +120,7 @@ At the end of the BioHackathon week (November 7, 2025), there were 30,608 resour
 According to the GitHub “Octoverse 2025” report [@GitHubStaff2025], there were approximately 395 million public and open-source repositories in GitHub in October 2025. The share of GitHub repositories covered by bio.tools is thus vanishingly small (see **Figure 2**). Even for a scientific topic such as "machine learning", there are 166,684 GitHub repos matching the GitHub topic, compared to 3,421 tools in bio.tools with the corresponding EDAM topic.
 
 
-![Venn diagram of bio.tools and GitHub, with the intersect representing bio.tools entries with at least one valid GitHub URL.](assets/venn_github_biotools_truncated.svg)
+![Venn diagram of bio.tools entries and GitHub repositories, with the intersect representing bio.tools entries with at least one valid GitHub URL.](assets/venn_github_biotools_truncated.svg)
 
 
 ## Metadata maturity
@@ -160,7 +160,7 @@ Conceptually, the bridge performs similar steps in both directions:
 * Explicit separation of workflows for metadata composition and mapping, and
 * Specific outputs for each direction of information flow.
 
-![Summarized sequence diagram of the bidirection bridge flow from a user perspective](assets/sequence_diagram.svg)
+![High-level sequence diagram summarizing the bidirection bridge interaction flow from a user perspective.](assets/sequence_diagram.svg)
 
 ### Software architecture
 
