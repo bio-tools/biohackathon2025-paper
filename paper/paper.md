@@ -125,11 +125,11 @@ According to the GitHub “Octoverse 2025” report [@GitHubStaff2025], there we
 
 ## Metadata maturity
 
-The correlation between software metadata in GitHub and bio.tools maturity level is rather poor. The principal component analysis (PCA) in **Figure 3** illustrates the relationship between maturity-related metrics in GitHub and the 'maturity' in the corresponding bio.tools entry. All of these GitHub metrics are highly correlated. For example, a project with more contributors and subscribers is also likely to have more forks, commits, and pulls: this is not surprising. <br>
-While there is some separation between 'Emerging' and 'Mature' tools, the main suggestion from these results is that a fair number of 'Emerging' tools should probably be updated to 'Mature'. The first principal component has nearly equal loadings for all metrics, where as the second seizes on the average time to close issues and number of contributors, with 'Mature' tools on average having shorter issue closing times and a larger numbers of contributors. <br>
-Of all bio.tools entries 611 are labeled as 'Emerging', 3,532 as 'Mature' and 120 as 'Legacy', with 26,345 having no indicated maturity level. Out of the bio.tools entries with valid GitHub repos, 1,386 tools are labeled as 'Mature', 339 as 'Emerging' and 18 as 'Legacy'.
+The correlation between software metadata in GitHub and bio.tools maturity level is rather poor. The principal component analysis (PCA) in **Figure 3** illustrates the relationship between maturity-related metrics in GitHub and the *maturity* in the corresponding bio.tools entry. All of these GitHub metrics are highly correlated. For example, a project with more contributors and subscribers is also likely to have more forks, commits, and pulls: this is not surprising. <br>
+While there is some separation between *Emerging* and *Mature* tools, the main suggestion from these results is that a fair number of *Emerging* tools should probably be updated to *Mature*. The first principal component has nearly equal loadings for all metrics, where as the second seizes on the average time to close issues and number of contributors, with *Mature* tools on average having shorter issue closing times and a larger numbers of contributors. <br>
+Of all bio.tools entries 611 are labeled as *Emerging*, 3,532 as *Mature* and 120 as *Legacy*, with 26,345 having no indicated maturity level. Out of the bio.tools entries with valid GitHub repos, 1,386 tools are labeled as *Mature*, 339 as *Emerging* and 18 as *Legacy*.
 
-![Principal component analysis (PCA) of bio.tools entries with a GitHub repository based on the numbers of contributors, forks (and network count), commits, pulls, releases, open issues, subscribers, watchers, stargazers, and the average time to close issues. The colors represent the bio.tools 'maturity' level, i.e., 'Emerging', 'Mature' or 'Legacy'.](assets/PCA.svg)
+![Principal component analysis (PCA) of bio.tools entries with a GitHub repository based on the numbers of contributors, forks (and network count), commits, pulls, releases, open issues, subscribers, watchers, stargazers, and the average time to close issues. The colors represent the bio.tools *maturity* level, i.e., *Emerging*, *Mature* or *Legacy*.](assets/PCA.svg)
 
 
 ## Implementation of bridge framework
@@ -199,9 +199,9 @@ In practice, this logic is realized as direction-specific mapping functions. Eac
 
 # Discussion 
 
-The goal of this BioHackathon project was to make software metadata annotation and maintenance less painful by creating a mechanism that can extract high-quality metadata from GitHub repositories to build bio.tools entries, and use bio.tools records to propose improvements back to GitHub (i.e. badges, descriptions, files). The outcome was a bidirectional bridge for maintaining software metadata, the structure of which has been designed to be a sustainable (i.e. extensible and robust) contribution to the global FAIR software ecosystem: capable of supporting bio.tools to faithfully represent GitHub repositories for software, while affording the possibility for developers and registry curators to leverage bio.tools and its underlying standards to improve the metadata richness of software repositories.
+The goal of this BioHackathon project was to make software metadata annotation and maintenance less painful by creating a mechanism that can extract high-quality metadata from GitHub repositories to build bio.tools entries, and use bio.tools records to propose improvements back to GitHub (i.e., badges, descriptions, files). The outcome was a bidirectional bridge for maintaining software metadata, the structure of which has been designed to be a sustainable (i.e., extensible and robust) contribution to the global FAIR software ecosystem: capable of supporting bio.tools to faithfully represent GitHub repositories for software, while affording the possibility for developers and registry curators to leverage bio.tools and its underlying standards to improve the metadata richness of software repositories.
 
-A number of insights were inevitably also gained in the process of building and testing the bridge.
+The process of building and testing the bridge also revealed a number of insights.
 
 **Statistics:** the repository and registry statistics collected showed that there is a vast gulf between the number of open-source repositories on GitHub and the number of bio.tools entries. The example of machine learning is illustrative of this challenge. Those repositories which fall within this domain, and that also contain software, could benefit from the bidirectional bridge facilitating the creation of new bio.tools entries. In such an example, the new entries could be reviewed, the bio.tools metadata wizard could support enrichment of the entry, and the enriched metadata could be passed back to the GitHub repository. There is also a clear need to expand the reach of the bio.tools registry, registering new software based on the respective repositories to make more of the global ecosystem FAIR.
 
@@ -217,7 +217,7 @@ The bidirectional bridge connects a commonly used software development platform 
 
 The project has delivered a successful bridge mechanism concept: there is now a suite of additional downstream work that may be undertaken to realise the full potential of the bridge.
 
-Firstly, the underlying framework of the bridge has been designed following a modular and scalable approach. This will enable further work to connect additional development platforms, or registries, by adding suitable metadata schema mappings. Other extension possibilities may include language or framework specific mappings (e.g. bioconda, Bioconductor). As both GitHub and bio.tools evolve independently, it will also be important to regularly and automatically test that the bridge is still traversible.
+Firstly, the underlying framework of the bridge has been designed following a modular and scalable approach. This will enable further work to connect additional development platforms (e.g., [GitLab](https://about.gitlab.com/), [Codeberg](https://codeberg.org/)), or registries (e.g., [Research Software Directory](https://research-software-directory.org/)), by adding suitable metadata schema mappings. Other extension possibilities may include language or framework specific mappings (e.g. [Bioconda](https://bioconda.github.io/), [Bioconductor](https://www.bioconductor.org/)). As both GitHub and bio.tools evolve independently, it will also be important to regularly and automatically test that the bridge is still traversible.
 
 Secondly, there are multiple enhancements being discussed to support the bridge, including a Pub2Tools integration for metadata mining, integration of the bridge into the bio.tools user interface, as well as suitable processes for mapping EDAM topics from GitHub to bio.tools, and mapping bio.tools functions to a GitHub README.
 
@@ -231,7 +231,7 @@ Finally, to ensure that the continued evolution of the bridge meets the expectat
 
 # Acknowledgements
 
-The authors acknowledge the ELIXIR and all organizers and participants of ELIXIR BioHackathon Europe 2025 in Berlin, Germany, for helping make this project a success. We particularly thank those participants who contributed their GitHub repositories or bio.tools entries for testing of the biodirectional GitHub $\rightleftarrows$ bio.tools bridge. Participation in the BioHackathoon was in part supported by the TDCC-LSH project "FAIR tool framework" (M.P., M.S.-T.).
+The authors acknowledge the ELIXIR and all organizers and participants of ELIXIR BioHackathon Europe 2025 in Berlin, Germany, for helping make this project a success. We particularly thank those participants who contributed their GitHub repositories or bio.tools entries for testing of the bidirectional GitHub $\rightleftarrows$ bio.tools bridge. Participation in the BioHackathon was in part supported by the TDCC-LSH project "FAIR tool framework" (M.P., M.S.-T.).
 
 
 # References
