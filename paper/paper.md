@@ -231,7 +231,8 @@ Finally, to ensure that the continued evolution of the bridge meets the expectat
 
 # Acknowledgements
 
-The authors acknowledge the ELIXIR and all organizers and participants of ELIXIR BioHackathon Europe 2025 in Berlin, Germany, for helping make this project a success. We particularly thank those participants who contributed their GitHub repositories or bio.tools entries for testing of the bidirectional GitHub $\rightleftarrows$ bio.tools bridge. Participation in the BioHackathon was in part supported by the TDCC-LSH project "FAIR tool framework" (M.P., M.S.-T.).
+The authors acknowledge the ELIXIR and all organizers and participants of ELIXIR BioHackathon Europe 2025 in Berlin, Germany, for helping make this project a success. We particularly thank those participants who contributed their GitHub repositories or bio.tools entries for testing of the bidirectional GitHub $\rightleftarrows$ bio.tools bridge. Participation in the BioHackathon was in part supported by the TDCC-LSH project "FAIR tool framework" (M.P., M.S.-T.). 
+This work is partly supported by the project "LUMC-DCC: implementation of FAIR software stewardship support" with file number ICT.001.LDCC2.004 of the research programme "Digital Competence Centres" which is (partly) financed by the Dutch Research Council (NWO).
 
 
 # References
