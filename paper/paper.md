@@ -114,7 +114,7 @@ The bridge also uses bio.tools entry metadata to automatically suggest enhanceme
 At the end of the BioHackathon week (November 7, 2025), there were 30,608 resources described in bio.tools. Of these, 13,774 or 45.0% of entries had at least one GitHub URL. Of these, 13,391, or 97.2% of all entries with GitHub URLs, pointed to a valid public GitHub repository. From these GitHub repositories, the descriptions, GitHub topics, licenses, README.md files, CITATION.cff files and quantitative metrics related to maturity were fetched.
 
 
-According to the GitHub “Octoverse 2025” report, there were approximately 395 million public and open-source repositories in GitHub in October 2025. The share of GitHub repositories covered by bio.tools is thus vanishingly small (see **Figure 2**). Even for a scientific topic such as "machine learning", there are 166,684 GitHub repos matching the GitHub topic, compared to 3,421 tools in bio.tools with the corresponding EDAM topic.
+According to the GitHub “Octoverse 2025” report [@GitHubStaff2025], there were approximately 395 million public and open-source repositories in GitHub in October 2025. The share of GitHub repositories covered by bio.tools is thus vanishingly small (see **Figure 2**). Even for a scientific topic such as "machine learning", there are 166,684 GitHub repos matching the GitHub topic, compared to 3,421 tools in bio.tools with the corresponding EDAM topic.
 
 
 ![Venn diagram of bio.tools and GitHub, with the intersect representing bio.tools entries with at least one valid GitHub URL.](assets/venn_github_biotools_truncated.svg)
