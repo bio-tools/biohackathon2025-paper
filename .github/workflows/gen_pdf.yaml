@@ -18,16 +18,15 @@ jobs:
     - name: Create info file
       run: |
          echo -e "ref: $GITHUB_REF \ncommit: $GITHUB_SHA\nbuild: $(date +"%Y-%m-%dT%H:%M:%SZ")" \
-         > info.txt
+         > info.txt     
     - name: Update latest release
-      uses: pyTooling/Actions/releaser@main
+      uses: softprops/action-gh-release@v1
       with:
-        tag: latest
+        tag_name: latest
         token: ${{ secrets.GITHUB_TOKEN }}
         files: |
           paper/paper.pdf
           info.txt
-
     - name: Create artifacts
       uses: actions/upload-artifact@v4
       with:
