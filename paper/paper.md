@@ -8,11 +8,11 @@ authors:
   - name: Mariia Steeghs-Turchina
     orcid: 0000-0002-0852-4752
     affiliation: 1, 
-    role: Conceptualization, Methodology, Software, Visualization, Writing – original draft, Project administration
+    role: Conceptualization, Methodology, Software, Visualization, Writing – original draft, Funding acquisition, Project administration
   - name: Anna Niehues
     orcid: 0000-0002-9839-5439
     affiliation: 1
-    role: Conceptualization, Methodology, Software, Writing – original draft, Supervision
+    role: Conceptualization, Methodology, Software, Writing – original draft, Funding acquisition, Supervision
   - name: Ana Mendes
     orcid: 0009-0008-5170-0927
     affiliation: 2
