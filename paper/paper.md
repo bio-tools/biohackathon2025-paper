@@ -7,37 +7,48 @@ tags:
 authors:
   - name: Mariia Steeghs-Turchina
     orcid: 0000-0002-0852-4752
-    affiliation: 1
+    affiliation: 1, 
+    role: Conceptualization, Methodology, Software, Visualization, Writing – original draft, Project administration
   - name: Anna Niehues
     orcid: 0000-0002-9839-5439
     affiliation: 1
+    role: Conceptualization, Methodology, Software, Writing – original draft, Supervision
   - name: Ana Mendes
     orcid: 0009-0008-5170-0927
     affiliation: 2
+    role: Methodology, Software, Resources, Writing – review & editing
   - name: Erik Jaaniso
     orcid: 0009-0003-4246-6546
     affiliation: 3
+    role: Methodology, Software, Resources, Writing – review & editing
   - name: Ove Johan Ragnar Gustafsson
     orcid: 0000-0002-2977-5032
     affiliation: 4
+    role: Methodology, Writing – original draft
   - name: Walter Baccinelli
     orcid: 0000-0001-8888-4792
     affiliation: 5
+    role: Methodology, Software, Writing – review & editing
   - name: Vedran Kasalica
     orcid: 0000-0002-0097-1056
     affiliation: 5
+    role: Resources, Writing – review & editing
   - name: Sam Cox
     orcid: 0000-0002-9841-9816
     affiliation: 6
+    role: Methodology, Software, Writing – review & editing
   - name: Ivan Topolsky
     orcid: 0000-0002-7561-0810
     affiliation: 7
+    role: Methodology, Software, Writing – review & editing
   - name: Magnus Palmblad
     orcid: 0000-0002-5865-8994
     affiliation: 1
+    role: Methodology, Formal analysis, Visualization, Software, Funding acquisition, Writing – original draft, Supervision
   - name: Veit Schwämmle
     orcid: 0000-0002-9708-6722
     affiliation: 2
+    role: Conceptualization, Methodology, Formal analysis, Visualization, Resources, Software, Funding acquisition, Writing – original draft, Supervision
 affiliations:
  - name: Leiden University Medical Center, Albinusdreef 2, 2333 ZA, Leiden, The Netherlands
    index: 1
