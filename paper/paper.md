@@ -203,9 +203,9 @@ In practice, this logic is realized as direction-specific mapping functions. Eac
 
 **Figures 5-6** illustrate a selection of mapping functions as flowcharts. The figures highlight how source prioritization and explicit conflict handling are applied, without requiring inspection of the implementation code. More process-related diagrams and flowcharts can be accessed in the [documentation](https://bio-tools.github.io/biohackathon2025/api_reference/diagrams_dev.html).
 
-![GitHub → bio.tools description mapping function flowchart.](assets/flowchart_gh2bt_description.svg)
+![GitHub → bio.tools description mapping function flowchart.](assets/flowchart_gh2bt_description.png)
 
-![bio.tools → GitHub version mapping function flowchart.](assets/flowchart_gh2bt_version.svg)
+![bio.tools → GitHub version mapping function flowchart.](assets/flowchart_gh2bt_version.png)
 
 
 # Discussion 
