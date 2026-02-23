@@ -205,7 +205,7 @@ In practice, this logic is realized as direction-specific mapping functions. Eac
 
 ![GitHub → bio.tools description mapping function flowchart.](assets/flowchart_gh2bt_description.png)
 
-![bio.tools → GitHub version mapping function flowchart.](assets/flowchart_gh2bt_version.png)
+![bio.tools → GitHub version mapping function flowchart.](assets/flowchart_bt2gh_version.png)
 
 
 # Discussion 
