@@ -1,5 +1,5 @@
 ---
-title: 'Bidirectional bridge: GitHub $\rightleftarrows$ bio.tools'
+title: 'A modular and extensible GitHub $\rightleftarrows$ bio.tools bridge for research software curation'
 tags:
   - GitHub
   - bio.tools
