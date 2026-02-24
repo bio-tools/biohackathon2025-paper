@@ -73,7 +73,7 @@ affiliations:
    ror: 002n09z45
 date: 04 November 2025
 bibliography: paper.bib
-authors_short: 'Steeghs-Turchina et al. (2025) Bidirectional bridge: GitHub $\rightleftarrows$ bio.tools'
+authors_short: 'Steeghs-Turchina et al. (2025) A modular and extensible GitHub $\rightleftarrows$ bio.tools bridge for research software curation'
 group: BioHackrXiv
 event: BioHackathon Europe 2025
 biohackathon_name: "BioHackathon Europe 2025"
