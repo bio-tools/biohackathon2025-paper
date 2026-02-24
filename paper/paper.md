@@ -71,9 +71,9 @@ affiliations:
  - name: Computational Biology Group, SIB Swiss Institute of Bioinformatics, Mattenstrasse 26, 4058 Basel, Switzerland
    index: 7
    ror: 002n09z45
-date: 04 November 2025
+date: 24 February 2026
 bibliography: paper.bib
-authors_short: 'Steeghs-Turchina et al. (2025) Bidirectional bridge: GitHub $\rightleftarrows$ bio.tools'
+authors_short: 'Steeghs-Turchina et al. (2026) Bidirectional bridge: GitHub $\rightleftarrows$ bio.tools'
 group: BioHackrXiv
 event: BioHackathon Europe 2025
 biohackathon_name: "BioHackathon Europe 2025"
